@@ -904,7 +904,7 @@ function details_table(objid,theme) {
     str += "<tr " + trclass + ">" +
       "<td class='firsttd " + field_id + "_field'>" + field + "</td>" +
       "<td style='width: 60px'>" + buttons + "</td>" +
-      '<td>' + xmlEnt(wbr(value, 10)) +
+      '<td>' + get_field_value(obj,field,'array') +
       "</td></tr>";
 
     i++;

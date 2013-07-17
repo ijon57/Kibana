@@ -119,9 +119,14 @@ function get_field_value(object,field,opt) {
             }
         })
         if (complex) {
-          return value.map(function(el){
-            return JSON.stringify(el, null, 4);
-          });
+        
+          if (opt == 'array') {
+            return value.map(function(el){
+              return JSON.stringify(el, null, 4);
+            }).join('<br/>');
+          } else {
+            return JSON.stringify(value, null, 4);
+          }
         }
         return value.toString();
     }
